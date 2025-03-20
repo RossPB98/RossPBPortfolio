@@ -1,0 +1,177 @@
+html {
+    min-height: 2000px;
+}
+
+/* Blob Body */
+.blob {
+    height: 150px;
+    width: 150px;
+    border-radius: 58% 43% 33% 64% / 50% 38% 53% 50%;
+    background: transparent;
+    box-shadow: inset 6px 33px 20px 0
+    #c9c9c9, inset 20px 80px 15px 0
+    #e0e0e0, 10px 20px 20px 0px #c9c9c9;
+}
+
+/* Big White Spot */
+.blob::before {
+    content: '';
+    position: absolute;
+    border-radius: 37% 54% 46% 46%;
+    background: white;
+    width: 50px;
+    transform: rotate(-30deg);
+    height: 15px;
+    top: 20px;
+    left: 20px;
+}
+
+/* Small White Spot */
+.blob::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    width: 10px;
+    height: 10px;
+    top: 60px;
+    left: 20px;
+}
+
+.center {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+}
+
+.circle {
+    content: '';
+    position: absolute;
+    aspect-ratio: 1;
+    border-radius: 50px;
+    background: black;
+    width: 10px;
+    height: 10px;
+    top: 10px;
+    right: 20px;
+}
+
+.cut {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.grid {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minimax(min(100%, 300px), 1fr));
+    gap: 1rem;
+}
+
+.scroll {
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+}
+
+.grad {
+    background: linear-gradient(90deg, #ff6b6b 0%, #4ecdc4 50%, #ff6b6b 100%);
+    background-size: 200% auto;
+    animation: gradient 3s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@keyframes gradient {
+    to {background-position: 200% center;}
+}
+
+.glass {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,.1);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.2);
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,.15);
+}
+
+.hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide::-webkit-scrollbar {
+    display: none;
+}
+
+.load {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shine 1.5s infinite linear;
+}
+
+@keyframes shine {
+    to {background-position: -200% 0;}
+}
+
+.fit {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.check {
+    appearance: none;
+    border: 2px solid;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.check:checked {
+    background: currentColor;
+}
+
+.reset {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.text {
+    text-wrap: balance;
+    max-width: 70ch;
+}
+
+.shadow {
+    box-shadow: 0 0 10px rgb(0 0 0/0.1), 
+                0 0 20px rgb(0 0 0/0.1);
+}
+
+.wrap {
+    width: min(100% - 2rem, 1200px);
+    margin-inline: auto;
+}
+
+.fluid {
+    font-size: clamp(1rem, 0.5rem + 2vw, 2rem);
+}
+
+.vert {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+@media print {
+    .hide {display: none;}
+    a[href]::after {content: "(" attr(href) ")"}
+}
