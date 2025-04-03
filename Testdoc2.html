@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Portfolio</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="Testdoc2.html">Ross B's Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Grid Container -->
+    <div class="main-grid-container">
+        <!-- About Me Section-->
+        <section id="about" class="d-flex align-items-center justify-content-center py-5 min-vh-100"
+            style="padding-top: 150px; padding-bottom: 100px;">
+            <div class="container text-center">
+                <img src="assets/profile-placeholder (1).jpg" class="rounded-circle mb-4 profile-img">
+                <div>
+                    <h2 class="section-title">Ross Barretto</h2>
+                    <h3 class="section-subtitle">Web Developer | IT Specialist | SNOW SysAdmin | Aspiring Tech Ethicist </h3>
+                    <p class="mb-4">My name's Ross Barretto and I'm an aspring Web Developer from New Brunswick, NJ. 
+                        My Web Development Skillset conprises of HTML, CSS, JS, Jquery, and PHP. I am also a ServiceNow Administrator where I made 
+                        customized dashboards and instances for serveral companies. I'm currently using what I've learned from my Web Dev College Classes and Clubs to 
+                        build this website. I'm looking foward in becoming a better Web Developer but I also have interests in the fields of CyberSecurity, 
+                        Computer Building, and IT/Tech Law and Ethics. Thank you for visitng my page!</p>
+                    <div class="social-links-container">
+                        <div class="social-links">
+                            <a href="https://github.com/RossPB98" class="contact-link" target="_blank">
+                                <!--Github SVG-->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14
+                                6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44
+                                0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0
+                                0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0
+                                0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/ross-barretto-78a6651bb/" class="contact-link" target="_blank">
+                                <!--LinkedIn SVG-->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="mailto:RossPB@Outlook.com" class="contact-link">
+                                <!--Email SVG-->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <span>Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Skills Section -->
+        <section id="skills" class="section-padding">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Skills & Technologies</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h4>Programming</h4>
+                        <div class="skill-items">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Jquery</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Bootstrap</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Bash</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Platforms</h4>
+                        <div class="skill-items">
+                            <span class="skill-tag">ServiceNow</span>
+                            <span class="skill-tag">Google Cloud</span>    
+                            <span class="skill-tag">Linux</span>    
+                            <span class="skill-tag">Windows</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Programs</h4>
+                        <div class="skill-items">
+                            <span class="skill-tag">Microsoft Office</span>
+                            <span class="skill-tag">Textpad</span>
+                            <span class="skill-tag">Notepad++</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Eclipse</span>  
+                            <span class="skill-tag">Netbeans</span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interests Section -->
+        <section id="interests" class="section-padding">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Interests & Hobbies</h2>
+                <div class="hobbies-grid">
+                    <div class="hobby-category">
+                        <h4>Hobbies</h4>
+                        <div class="hobby-items">
+                            <span class="skill-tag">Music</span>
+                            <span class="skill-tag">Gaming</span>
+                            <span class="skill-tag">Reading</span>  
+                            <span class="skill-tag">Cooking</span>
+                        </div>
+                    </div>
+                    <div class="hobby-category">
+                        <h4>Interests</h4>
+                        <div class="hobby-items">
+                            <span class="skill-tag">Languages</span>
+                            <span class="skill-tag">Technologies</span>
+                            <span class="skill-tag">Computer Building</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Experience & Education Section -->
+    <section id="experience" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Education & Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content left">
+                        <span class="timeline-date">2024 - Present</span>
+                        <h3 class="timeline-title">Middlesex College</h3>
+                        <p class="timeline-subtitle">Computer & Information Systems</p>
+                        <p class="timeline-text">Studying Web Development, Back-End Languages, and System Management</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content right">
+                        <span class="timeline-date">2021 - 2024</span>
+                        <h3 class="timeline-title">Infosys</h3>
+                        <p class="timeline-subtitle">Tech Support Associate</p>
+                        <p class="timeline-text">ServiceNow Administrator working with teams on customized interfaces for clients</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">My Projects</h2>
+            <div class="project-scroll-container">
+                <div class="card bg-dark text-white">
+                    <a href="https://github.com/rosspb1467/TCNJ2k24Drumpad" target="_blank"
+                        class="text-decoration-none">
+                        <img src="assets/DPImg.PNG" class="card-img-top" alt="Image of my Drum Pad Webpage">
+                        <div class="card-body">
+                            <h3 class="card-title">Simple Drum Pad</h3>
+                            <p class="card-text">A simple Drum Pad built with HTML, CSS, and JavaScript</p>
+                            <div class="d-flex gap-2 justify-content-center mt-3">
+                                <span class="badge skill-tag">HTML</span>
+                                <span class="badge skill-tag">JavaScript</span>
+                                <span class="badge skill-tag">CSS</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card bg-dark text-white">
+                    <a href="https://nwyrain.42web.io/WebDevProject/cardgame.php" target="_blank"
+                        class="text-decoration-none">
+                        <img src="assets/CGImg.PNG" class="card-img-top" alt="Image of my Card Game Webpage">
+                        <div class="card-body">
+                            <h3 class="card-title">Simple Matching card game</h3>
+                            <p class="card-text">A simple Matching Card Game built with HTML, CSS, and JavaScript</p>
+                            <div class="d-flex gap-2 justify-content-center mt-3">
+                                <span class="badge skill-tag">HTML</span>
+                                <span class="badge skill-tag">JavaScript</span>
+                                <span class="badge skill-tag">CSS</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-category">
+                    <h4>IT</h4>
+                    <div class="certification-items">
+                        <span class="certification-tag">Google IT Support Professional</span>
+                        <span class="certification-tag">ITLv4 Certification</span>
+                        <span class="certification-tag">CompTIA A+ Core 1</span>
+                    </div>
+                </div>
+                <div class="certification-category">
+                    <h4>Platforms</h4>
+                    <div class="certification-items">
+                        <span class="certification-tag">ServiceNow Administrator</span>
+                        <span class="certification-tag">ServiceNow Developer</span>
+                        <span class="certification-tag">Github Foundations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <h2 class="section-title">Contact Me</h2>
+        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="06454074-45fb-4ebe-ac80-0f08a5bf90ae">
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Music Player -->
+    <footer id="music-footer">
+        <div id="custom-music-player">
+            <button id="prev-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                    <line x1="5" y1="19" x2="5" y2="5"></line>
+                </svg>
+            </button>
+            <button id="play-pause-btn">
+                <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    width="24" height="24">
+                    <path d="M8 5v14l11-7z"></path>
+                </svg>
+                <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    width="24" height="24" style="display: none;">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+                </svg>
+            </button>
+            <button id="next-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                    <line x1="19" y1="5" x2="19" y2="19"></line>
+                </svg>
+            </button>
+            <span id="current-time">0:00</span>
+            <input type="range" id="seek-bar" value="0">
+            <span id="total-time">0:00</span>
+            <button id="shuffle-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 3 21 3 21 8"></polyline>
+                    <line x1="4" y1="20" x2="21" y2="3"></line>
+                    <polyline points="21 16 21 21 16 21"></polyline>
+                    <line x1="15" y1="15" x2="21" y2="21"></line>
+                    <line x1="4" y1="4" x2="9" y2="9"></line>
+                </svg>
+            </button>
+            <button id="loop-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 1l4 4-4 4"></path>
+                    <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                    <path d="M7 23l-4-4 4-4"></path>
+                    <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                </svg>
+            </button>
+            <div class="volume-container">
+                <button id="volume-btn">
+                    <svg id="volume-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                    </svg>
+                </button>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
+            </div>
+            <audio id="audio-player">
+                <source src="assets/NPC_Yvona.mp3" type="audio/mp3">
+                <source src="assets/boss_ICK.mp3" type="audio/mp3">
+                <source src="assets/Field_AvalonGate.mp3" type="audio/mp3">
+                <source src="assets/Field_SidheGrove_000.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="track-info">
+                <div id="track-title"></div>
+                <div class="track-artist"></div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="app.js"></script>
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

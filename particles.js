@@ -1,4 +1,6 @@
-// Wait for the DOM to load
+// Declare leaves array in global scope
+window.leaves = [];
+
 document.addEventListener('DOMContentLoaded', function () {
     const canvas = document.getElementById('particleCanvas');
     const ctx = canvas.getContext('2d');
@@ -11,40 +13,71 @@ document.addEventListener('DOMContentLoaded', function () {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Load the maple leaf image
-    const leafImage = new Image();
-    leafImage.src = 'assets/maple-leaf-clipart-md.png'; // Update with the correct path to your image
+    // Maple Leaf Colors
+    const leafColors = [
+        '#F7B155', 
+        '#F79039',  
+        '#FD6E10',  
+        '#FD6E10',  
+        '#DE300B',
+        '#C40806'
+    ];
 
-    // Heart Particle class
-    class HeartParticle {
+    // Maple Leaf Particle class
+    class MapleLeaf {
         constructor() {
-            this.size = Math.random() * 20 + 10; // Random size between 10 and 30
-            this.x = Math.random() * (canvas.width - this.size);
-            this.y = Math.random() * (canvas.height - this.size);
-            this.speedY = Math.random() * 2 + 1; // Random downward speed
+            this.reset();
+        }
+
+        reset() {
+            this.x = Math.random() * canvas.width;
+            this.y = -50;
+            this.size = Math.random() * 20 + 10;
+            this.speedY = Math.random() * 2 + 1;
+            this.speedX = Math.random() * 1 - 0.5;
+            this.rotation = Math.random() * Math.PI * 2;
+            this.rotationSpeed = Math.random() * 0.1 - 0.05;
+            this.color = leafColors[Math.floor(Math.random() * leafColors.length)];
+            this.opacity = Math.random() * 0.7 + 0.3;
         }
 
         draw() {
-            // Draw the maple leaf image
-            ctx.drawImage(leafImage, this.x, this.y, this.size, this.size);
+            ctx.save();
+            ctx.globalAlpha = this.opacity;
+            ctx.translate(this.x, this.y);
+            ctx.rotate(this.rotation);
+            
+            // Draw a simple maple leaf shape
+            ctx.beginPath();
+            ctx.moveTo(0, -this.size/2);
+            ctx.quadraticCurveTo(this.size/2, 0, 0, this.size/2);
+            ctx.quadraticCurveTo(-this.size/2, 0, 0, -this.size/2);
+            
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            
+            ctx.restore();
         }
 
         update() {
             this.y += this.speedY;
+            this.x += this.speedX;
+            this.rotation += this.rotationSpeed;
 
-            // Reset position if it goes off the bottom
-            if (this.y - this.size > canvas.height) {
-                this.y = -this.size;
-                this.x = Math.random() * (canvas.width - this.size);
+            // Reset leaf when it goes off screen
+            if (this.y > canvas.height + 50) {
+                this.reset();
             }
         }
     }
 
-    // Create heart particles
-    const hearts = [];
+    // Create maple leaves
     function init() {
-        for (let i = 0; i < 50; i++) {
-            hearts.push(new HeartParticle());
+        // Clear the leaves array first
+        window.leaves = [];
+        // Amount of leaves to appear
+        for (let i = 0; i < 75; i++) {
+            window.leaves.push(new MapleLeaf());
         }
     }
     init();
@@ -52,9 +85,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Animation loop
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        hearts.forEach(heart => {
-            heart.update();
-            heart.draw();
+        window.leaves.forEach(leaf => {
+            leaf.update();
+            leaf.draw();
         });
         requestAnimationFrame(animate);
     }
