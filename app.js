@@ -3,22 +3,22 @@ const playlist = [
     {
         title: "Yvona",
         artist: "Soundtrack",
-        src: "/assets/NPC_Yvona.mp3"
+        src: "assets/NPC_Yvona.mp3"
     },
     {
         title: "ICK",
         artist: "Soundtrack",
-        src: "/assets/boss_ICK.mp3"
+        src: "assets/boss_ICK.mp3"
     },
     {
         title: "Avalon Gate",
         artist: "Soundtrack",
-        src: "/assets/Field_AvalonGate.mp3"
+        src: "assets/Field_AvalonGate.mp3"
     },
     {
         title: "Sidhe Grove",
         artist: "Soundtrack",
-        src: "/assets/Field_SidheGrove_000.mp3"
+        src: "assets/Field_SidheGrove_000.mp3"
     }
     // Add more songs as needed
 ];
